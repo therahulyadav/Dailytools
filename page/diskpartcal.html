@@ -3,9 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/style/diskpartcal.css">
+    <title>Disk partition Calculator</title>
 </head>
 <body>
-    
+    <nav>
+
+    </nav>
+    <section>
+        <div><h1>Disk partition Calculator</h1></div>
+        <div><h3>Get integer partition size</h3></div>
+        <div>
+            <p class="text">
+                If you want to see the disk in Windows explorer is the capacity of the integer GB (not 99.99GB). 
+                Enter the size and format of the target partition (NTFS or FAT32) and the partition size calculator will give the correct MB for the integer partition. 
+                Only Windows system is supported.
+            </p>
+        </div>
+    </section>
+    <section>
+        <div>
+            <label for="values">Target partition capacity(G):</label>
+            <input type="text" name="" id="values">
+            <button class="cal">Calculate</button>
+        </div>
+    </section>
+    <section class="">
+        <p>Tips: Since Windows 9x, when users make partitions using the FDISK utility, normally they will enter 10240 for 10 GB. But in Windows Explorer, it shows up as 9.98 GB, instead of 10.00 GB. It has a special algorithm, 10 GB is 10276 MB for FAT32, and 10245 MB for NTFS.</p>
+        <p>In Windows 10 Setup (or maybe in Windows 7, 8.0 and 8.1 too), there is a step for partitioning. If the hard disk is empty, and you want to create the first primary partition, it will make extra 3 hidden partitions.For example, the desired size for the first primary partition is 60 GB. The calculated size using the above formula is 61444 MB. You will need to enter 61444+566 = 62010 MB to get the primary partition displayed as 60.00 GB correctly.</p>
+    </section>
+    <div>Share this page</div>
 </body>
 </html>
